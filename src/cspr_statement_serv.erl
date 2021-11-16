@@ -36,6 +36,7 @@ reward(Address) ->
 init([]) ->
     io:format("ssl: ~w \n", [ssl:start()]),
     io:format("inets: ~w \n", [application:start(inets)]),
+    
     {ok, #state{}}.
 
 handle_call({transaction, Address}, _From, State) ->

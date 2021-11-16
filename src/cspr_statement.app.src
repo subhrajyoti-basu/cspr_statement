@@ -5,7 +5,8 @@
   {mod, {cspr_statement_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    cowboy
    ]},
   {env,[]},
   {modules, []},
