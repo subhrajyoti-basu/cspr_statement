@@ -11,7 +11,10 @@
 
 start(_StartType, _StartArgs) ->
     Dispatch = cowboy_router:compile([
-        {'_', [{"/transaction/:address", hello_handler, []}]}
+        {'_', [{"/transaction/:address", transaction_handler, []},
+                {"/rewards/:address", rewards_handler, []},
+                {"/currentprice", cprice_handler, []}            
+            ]}
     ]),
     {ok, _} = cowboy:start_clear(my_http_listener,
         [{port, 8080}],
